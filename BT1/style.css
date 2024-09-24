@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    width: 1920px;
+    height: 691px;
+    flex-direction: column;
+    align-items: center;
+    gap: 51px;
+}
+
+.content {
+    display: flex;
+    width: 1260px;
+    height: 565px;
+    align-items: center;
+    gap: 67px;
+    padding: 63px 0;
+}
+
+.text {
+    display: flex;
+    width: 426px;
+    height: 479px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.heading {
+    display: flex;
+    width: 374px;
+    height: 171px;
+    padding: 10px 10px;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.text h1 {
+    /* Second Headline */
+    color: #2D3748;
+    font-family: Poppins;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 57px;
+    /* 123.913% */
+    letter-spacing: 0.2px;
+}
+
+.paragraph {
+    display: flex;
+    width: 303px;
+    height: 162px;
+    padding: 30px 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.text p {
+    color: #A0AEC0;
+    /* Paragraphe */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    /* 150% */
+    letter-spacing: 0.2px;
+}
+
+.bt {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#id1 {
+    display: flex;
+    width: 216px;
+    height: 52px;
+    padding: 20px 36px;
+    align-items: center;
+    border-radius: 39px;
+    border: 0px solid #03D6F3;
+    background: #03D6F3;
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+
+    color: var(--light-text, #FFF);
+    justify-content: center;
+    /* Button */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    /* 100% */
+    letter-spacing: 0.2px;
+}
+
+#id2 {
+    display: flex;
+    width: 203px;
+    height: 52px;
+    padding: 20px 36px;
+    align-items: center;
+    border-radius: 39px;
+    background: #f3f4f6;
+    border: 1px solid #03D6F3;
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+
+    color: var(--primary, #4FD1C5);
+    justify-content: center;
+    /* Button */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    /* 100% */
+    letter-spacing: 0.2px;
+}
+
+.image {
+    display: flex;
+    width: 767px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.image img {
+    width: 762px;
+    height: 545px;
+    border-radius: 5px;
+    background: url('./img/screen.png') lightgray 50% / cover no-repeat;
+    /* shadow */
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+
+}
