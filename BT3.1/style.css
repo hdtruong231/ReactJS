@@ -1,6 +1,7 @@
 .container {
     margin: auto;
     width: 523px;
+    max-width: 532px;
     height: 923px;
     display: flex;
     flex-direction: column;
@@ -171,6 +172,5 @@
     height: 220px;
     align-self: stretch;
     border-radius: 5px;
-    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+
 }

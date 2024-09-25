@@ -1,12 +1,11 @@
 body {
-    width: 1920px;
-    height: 788px;
+
     padding: 0;
     margin: 0;
 }
 
 .block1 {
-    width: 1920px;
+
     height: 415px;
     background-color: #ffffff;
     padding: 0;
@@ -86,7 +85,7 @@ body {
 }
 
 .block2 {
-    width: 1920px;
+
     height: 380px;
     margin: 0;
     padding: 0;
