@@ -1,0 +1,77 @@
+/* Định dạng chung cho container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Ví dụ 1: Sử dụng margin: auto; */
+.vd1 {
+    width: 50%;
+    height: 100px;
+    background-color: lightcoral;
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ví dụ 2: Sử dụng Flexbox */
+.vd2 {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    height: 100px;
+    background-color: lightblue;
+}
+
+/* Ví dụ 3: Sử dụng Grid Layout */
+.vd3 {
+    display: grid;
+    place-items: center; /* Căn giữa theo cả hai chiều */
+    height: 100px;
+    background-color: lightgreen;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+/* Ví dụ 4: Sử dụng position: absolute; và transform */
+.vd4 {
+    position: relative;
+    height: 100px;
+    background-color: lightyellow;
+}
+
+.vd4 p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa cả hai chiều */
+}
+
+/* Ví dụ 5: Sử dụng text-align: center; */
+.vd5 {
+    text-align: center; /* Căn giữa theo chiều ngang */
+    height: 100px;
+    background-color: lightpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ví dụ 6: Sử dụng vertical-align: middle; */
+.vd6 {
+    height: 200px;
+    background-color: lightgray;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 100px; /* Giúp căn giữa văn bản theo chiều dọc */
+    text-align: center;
+}
+
+/* Ví dụ 7: Kết hợp line-height với chiều cao */
+.vd7 {
+    height: 100px;
+    line-height: 100px; /* Căn giữa theo chiều dọc */
+    text-align: center; /* Căn giữa theo chiều ngang */
+    background-color: lightgoldenrodyellow;
+}

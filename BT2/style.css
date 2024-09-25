@@ -1,0 +1,168 @@
+body {
+    width: 1920px;
+    height: 788px;
+    padding: 0;
+    margin: 0;
+}
+
+.block1 {
+    width: 1920px;
+    height: 415px;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.content h1 {
+    color: #2D3748;
+    font-family: Poppins;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.content p {
+    color: #A0AEC0;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0px;
+    letter-spacing: 0.2px;
+}
+
+.sub {
+    padding: 54px 0;
+    display: block;
+    width: 476px;
+
+}
+
+.sub input {
+    width: 232px;
+    height: 50px;
+    background-color: #ecececa1;
+    color: #221414e4;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 0px;
+    letter-spacing: 0px;
+    border: 1px solid #A0AEC0;
+    border-radius: 5px;
+    padding: 0 25px;
+}
+.sub input::placeholder {
+    color: #A0AEC0;
+}
+
+.sub button {
+    width: 182px;
+    height: 52px;
+    background-color: #03D6F3;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: bold;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 0.2px;
+    border: 0px solid black;
+    border-radius: 40px;
+    padding: 0px;
+    margin-left: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.block2 {
+    width: 1920px;
+    height: 380px;
+    margin: 0;
+    padding: 0;
+    background-color: #2f3c4b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.table {
+    width: 360px;
+    color: #ffffff;
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 0 0 0;
+}
+
+.table-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 46px);
+    column-gap: 40px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+
+#littleboy {
+    font-size: 11px;
+    font-weight: 600;
+    margin: 27px;
+}
+
+.map {
+    width: 340px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.map Map {
+    width: 100%;
+    /* Ảnh tự điều chỉnh chiều rộng theo khung */
+    height: 100%;
+    object-fit: cover;
+    /* Tự động cắt ảnh để khớp với khung, không bị méo */
+}
+
+.contact {
+    width: 360px;
+    height: 222px;
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+    gap: 30px;
+}
+.about{
+    height: 110px;
+}
+.fas 
+{
+    padding: 0 10px 0 35px;
+}
+.social-icons
+{
+    padding: 0 15px ;
+    align-items: left;
+}
+.social-icons a {
+    font-size: 36px;
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+}
