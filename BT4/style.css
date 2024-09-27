@@ -206,9 +206,8 @@
         justify-content: space-between;
     }
     .listt{
-        display: flex;
+        display: none;
         margin: 0 auto;
-        overflow: hidden;
     }
     .listt ul{
         display: flex;
@@ -256,5 +255,10 @@
     }
     #db {
         height: auto;
+    }
+}
+@media screen and (min-width: 850px) {
+    .listt{
+        display:flex;
     }
 }
