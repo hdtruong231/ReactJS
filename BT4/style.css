@@ -222,10 +222,7 @@
         line-height: 16px;
         letter-spacing: 0.2px;
     }
-    .signup svg
-    {
-        display: none;
-    }
+
     .secondHeading, .subHeading, .bt
     {
         width: 531px;
@@ -260,5 +257,9 @@
 @media screen and (min-width: 850px) {
     .listt{
         display:flex;
+    }
+    .signup svg
+    {
+        display: none;
     }
 }
