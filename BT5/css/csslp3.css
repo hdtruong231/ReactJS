@@ -267,7 +267,12 @@ button:hover {
     /* 100% */
     letter-spacing: 0.2px;
 }
-
+.bt button:hover {
+    background:#4FD1C5;
+}
+.bt button:active {
+    background:#03aff3;
+}
 @media screen and (max-width: 1150px) {
     .content {
         display: flex;

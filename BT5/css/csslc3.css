@@ -123,7 +123,20 @@ button:hover {
     box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
     color: var(--light-text, #FFF);
 }
-
+#id1:hover {
+    background:#4FD1C5;
+}
+#id1:active {
+    background:#03aff3;
+}
+#id2:hover {
+    background:#4FD1C5;
+    color: #ffffff;
+}
+#id2:active {
+    background:#03aff3;
+    color: #ffffff;
+}
 #id2 {
     background: #f3f4f6;
     border: 1px solid #03D6F3;

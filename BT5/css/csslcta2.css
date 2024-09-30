@@ -136,7 +136,20 @@ span {
     box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
     color: var(--primary, #4FD1C5);
 }
-
+#id1:hover {
+    background:#4FD1C5;
+}
+#id1:active {
+    background:#03aff3;
+}
+#id2:hover {
+    background:#4FD1C5;
+    color: #ffffff;
+}
+#id2:active {
+    background:#03aff3;
+    color: #ffffff;
+}
 .image {
     grid-column: 2;
     grid-row: 1/3;

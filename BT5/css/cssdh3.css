@@ -16,7 +16,18 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     /* Tạo hiệu ứng bóng đổ khi hover */
 }
-
+.signup button:hover, #tff:hover, #gs:hover {
+   background-color: rgb(169, 98, 236);
+}
+.signup button:active, #tff:active,#gs:active {
+    background-color: rgb(141, 55, 222);
+ }
+ #gs:hover {
+    color: rgb(255, 255, 255);
+ }
+    #gs:active {
+        color: rgb(255, 255, 255);
+    }
 .container {
     margin: auto;
     height: 923px;
@@ -233,6 +244,22 @@ button:hover {
         font-weight: 300;
         line-height: 16px;
         letter-spacing: 0.2px;
+    }
+    .listt ul li {
+        display: inline-block; /* Hiển thị các mục li cạnh nhau */
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu nền */
+    }
+    
+    /* Hiệu ứng khi đưa chuột vào (hover) */
+    .listt ul li:hover {
+        color: #333; /* Thay đổi màu chữ khi hover */
+    }
+    
+    /* Hiệu ứng khi click (active) */
+    .listt ul li:active {
+        color: #000; /* Thay đổi màu chữ khi nhấn */
     }
 
     .secondHeading,

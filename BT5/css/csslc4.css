@@ -130,7 +130,12 @@ button:hover {
     box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
     color: var(--light-text, #FFF);
 }
-
+#id1:hover {
+    background:#4FD1C5;
+}
+#id1:active {
+    background:#03aff3;
+}
 .image {
     grid-column: 1;
     grid-row: 1/3;
