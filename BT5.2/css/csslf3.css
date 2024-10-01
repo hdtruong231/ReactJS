@@ -1,0 +1,225 @@
+
+/* Block 1 styles */
+.lfBlock1 {
+    height: 415px;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+/* Content styles */
+.lfContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+  
+}
+.lfTextcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+}
+
+.lfTextcontent h1 {
+    display: flex;
+padding: 10px;
+align-items: center;
+gap: 10px;
+    color: #2D3748;
+    font-family: Poppins;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.lfTextcontent p {
+    display: flex;
+padding: 10px;
+align-items: center;
+gap: 10px;
+    color: #A0AEC0;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0px;
+    letter-spacing: 0.2px;
+}
+
+/* Subscription input and button styles */
+.lfSub {
+    padding: 54px 0;
+    display: flex;
+    width: 476px;
+    gap: 10px;
+}
+
+.lfSub input {
+    width: 232px;
+    height: 50px;
+    background-color: #ecececa1;
+    color: #221414e4;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #A0AEC0;
+    border-radius: 5px;
+    padding: 0 25px;
+}
+
+.lfSub input::placeholder {
+    color: #A0AEC0;
+}
+
+.lfSub button {
+    width: 182px;
+    height: 52px;
+    background-color: #03D6F3;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: bold;
+    font-weight: 500;
+    border: none;
+    border-radius: 40px;
+    padding: 0;
+    margin-left: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lfSub button:hover {
+    background-color: #4FD1C5;
+}
+
+.lfSub button:active {
+    background-color: #03aff3;
+}
+
+/* Block 2 styles */
+.lfBlock2 {
+    height: 380px;
+    margin: 0;
+    padding: 0;
+    background-color: #2f3c4b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Table styles */
+.lfTable {
+    width: 360px;
+    color: #ffffff;
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 0 0 0;
+}
+
+.lfTableItem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 46px);
+    column-gap: 40px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+
+#lfLittleBoy {
+    font-size: 11px;
+    font-weight: 600;
+    margin: 27px;
+}
+
+/* Map styles */
+.lfMap {
+    width: 340px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.lfMap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contact and social icons styles */
+.lfContact {
+    width: 360px;
+    height: 222px;
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+    
+}
+
+.lfAbout {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fas {
+    padding: 10px 10px 20px 35px;
+}
+
+.lfSocialIcons {
+    padding: 0 35px;
+    display: flex;
+    gap: 30px;
+}
+
+.lfSocialIcons a {
+    font-size: 36px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 1320px) {
+    body {
+        width: 532px;
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .lfSub {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .lfSub input {
+        width: 100%;
+        padding: 0;
+    }
+
+    .lfSub button {
+        width: 100%;
+        margin-left: 0;
+        border-radius: 6px;
+    }
+
+    .lfSub input::placeholder {
+        color: #A0AEC0;
+        text-align: center;
+    }
+
+    .lfBlock2 {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 50px 0;
+    }
+}

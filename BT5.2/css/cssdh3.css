@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dh3signup button:hover, #dh3tff:hover, #dh3gs:hover {
+   background-color: rgb(169, 98, 236);
+}
+
+.dh3signup button:active, #dh3tff:active, #dh3gs:active {
+    background-color: rgb(141, 55, 222);
+}
+
+#dh3gs:hover, #dh3gs:active {
+    color: rgb(255, 255, 255);
+}
+
+.darkHero3 {
+    margin: 0;
+    height: 923px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    background: linear-gradient(231deg, #CB1AE8 -0.37%, #37BDA6 100%);
+}
+
+.dh3nav-bar {
+    width: 483px;
+    height: 78px;
+    display: flex;
+    padding: 15px 16px 14px 24px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 94px;
+}
+
+.dh3logo {
+    display: flex;
+    padding: 10px 0px;
+    align-items: flex-start;
+}
+.dh3logo img {
+    width: 186px;
+    height: 58px;
+}
+
+.dh3listt {
+    display: none;
+}
+
+.dh3signup {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dh3signup button {
+    display: flex;
+    height: 52px;
+    padding: 20px 28px;
+    align-items: center;
+    border-radius: 39px;
+    border: 1px solid #FFF;
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+}
+
+#dh3sg {
+    width: 120px;
+}
+
+.dh3signup svg {
+    width: 66px;
+    height: 53px;
+}
+
+.dh3content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    align-self: stretch;
+}
+
+.dh3secondHeading {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    width: 310px;
+    height: 171px;
+}
+
+.dh3secondHeading h2 {
+    color: #FFF;
+    text-align: center;
+    padding: 0;
+    font-family: Poppins;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+}
+
+.dh3subHeading {
+    width: 335px;
+    height: 40px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.dh3subHeading p {
+    color: #E5E5E5;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 125% */
+    letter-spacing: 0.2px;
+}
+
+.dh3bt {
+    width: 251px;
+    height: 99px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+#dh3tff, #dh3gs {
+    display: flex;
+    width: 255px;
+    height: 52px;
+    padding: 25px 80px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 39px;
+    border: 1px solid #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    /* 100% */
+    letter-spacing: 0.2px;
+}
+
+#dh3gs {
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+    color: #2D3748;
+}
+
+#dh3tff {
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.dh3image {
+    display: flex;
+    width: 360px;
+    padding: 50px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#dh3db {
+    height: 220px;
+    align-self: stretch;
+    border-radius: 5px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1320px) {
+   
+    .darkHero3 {
+        width: 100%;
+        height: auto;
+        padding:  0;
+        margin: 0;
+    }
+
+    .dh3nav-bar {
+        width: calc(483/532*100%);
+        justify-content: space-between;
+    }
+
+    .dh3listt {
+        display: none;
+    }
+
+    .dh3listt ul {
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        color: var(--light-text, #FFF);
+        /* Button */
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 16px;
+        letter-spacing: 0.2px;
+    }
+
+    .dh3listt ul li a{
+        display: inline-block; /* Hiển thị các mục li cạnh nhau */
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; 
+        text-decoration: none;
+        color: #FFF;
+    }
+   
+    .dh3listt ul li a:hover {
+        color: #333;
+    }
+    .dh3listt ul li a:active {
+        color: #000;
+    }
+
+
+    .dh3secondHeading, .dh3subHeading, .dh3bt {
+        width: 531px;
+        margin: 0 auto;
+    }
+    .dh3secondHeading h2, .dh3subHeading p {
+        margin: 0 auto;
+    }
+
+    .dh3bt {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #dh3tff, #dh3gs {
+        width: 205px;
+        height: 52px;
+        text-align: center;
+        padding: 25px;
+        justify-content: center;
+    }
+
+    .dh3image {
+        width: 801px;
+        max-width: 90%;
+    }
+
+    #dh3db {
+        height: auto;
+    }
+    .dh3listt {
+        display: flex;
+    }
+
+    .dh3signup svg {
+        display: none;
+    }
+}
+

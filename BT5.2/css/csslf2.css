@@ -1,0 +1,139 @@
+
+.lightFuture2 {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    padding: 50px 199px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.lf2secondHeading {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.lf2secondHeading h2 {
+    color: var(--first-text, #2D3748);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+}
+
+.lf2card {
+    display: flex;
+    height: 400px;
+    align-items: center;
+    gap: 31px;
+}
+
+.lf2card1, .lf2card2, .lf2card3 {
+    display: flex;
+    padding: 40px 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #DEDEDE;
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lf2card1:hover, .lf2card2:hover, .lf2card3:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.lf2card1, .lf2card3 {
+    background: var(--light-background, #FFF);
+}
+
+.lf2card2 {
+    border: 0px solid #DEDEDE;
+    background: var(--dark-background, linear-gradient(231deg, #CB1AE8 -0.37%, #37BDA6 100%));
+    color: var(--light-text, #FFF);
+}
+
+.lf2card img {
+    display: flex;
+    padding: 20px 3px;
+    align-items: center;
+    gap: 10px;
+}
+
+.lf2card h3 {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    width: 290px;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0.1px;
+}
+
+.lf2card p {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.2px;
+}
+
+.lf2card a {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.2px;
+}
+
+.lf2card a:hover {
+    text-decoration: underline;
+}
+
+.lf2card a:active {
+    color: #ff0000;
+}
+
+.lf2card1 p, .lf2card3 p {
+    color: var(--second-text, #A0AEC0);
+}
+
+.lf2card1 a, .lf2card3 a {
+    color: var(--secondary, #03D6F3);
+}
+
+@media screen and (max-width: 1320px) {
+    .lf2card {
+        flex-direction: column;
+        gap: 64px;
+        height: auto;
+    }
+    
+    .lf2secondHeading {
+        width: 300px;
+    }
+}
