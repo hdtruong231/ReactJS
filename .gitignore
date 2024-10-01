@@ -1,1 +1,7 @@
-/BT5
+# Ignore everything in this directory
+*
+# Except this folder BT5.2
+!BT5.2/
+
+
+
