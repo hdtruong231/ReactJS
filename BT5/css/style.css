@@ -31,7 +31,7 @@ iframe {
     height: 190vh;
 }
 #iframe7{
-    height: 107.5vh;
+    height: 795px;
 }
 @media screen and (max-width: 1320px) {
     #iframe2 {
@@ -56,6 +56,6 @@ iframe {
 @media screen and (max-width: 1200px)
 {
     #iframe7 {
-        height: 177vh;
+        height: 1280px;
     }
 }

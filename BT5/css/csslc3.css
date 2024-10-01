@@ -159,6 +159,8 @@ button:hover {
  body {
     max-width: 532px;
     padding: 0;
+    margin: 0 auto;
+
  }
     .content {
         padding: 0;
