@@ -1,26 +1,17 @@
 
 .lightContent3 {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 1fr;
-    gap: 10px;
-    width: 80%;
+    row-gap: 0px;
+    column-gap: 80px;
     margin: 0 auto;
-}
 
-
-
-.lc3-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 1fr;
-    gap: 10px;
 }
 
 .lc3-text {
     grid-column: 1;
     grid-row: 1;
     align-self: flex-end;
+    justify-self: end;
     width: 550px;
     display: flex;
     padding: 14px 0px;
@@ -64,8 +55,10 @@
     grid-column: 1;
     grid-row: 2;
     align-self: flex-start;
+    justify-self: end;
     display: flex;
     gap: 20px;
+    padding: 0 90px;
 }
 
 #lc3-id1, #lc3-id2 {
@@ -118,7 +111,7 @@
     padding: 10px;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-self: start;
 }
 @media screen and (max-width: 1320px) {
    

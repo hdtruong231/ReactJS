@@ -115,7 +115,7 @@ button:hover {
     font-family: Poppins;
     font-size: 46px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 800;
     line-height: 57px;
     letter-spacing: 0.2px;
 }
@@ -275,9 +275,11 @@ button:hover {
         height: auto;
     }
 }
-@media screen and (min-width: 1340px) {
+@media screen and (min-width: 840px) {
    
-    
+    .dh3nav-bar{
+        gap: 10px;
+    }
     .dh3listt {
         display: flex;
     }
