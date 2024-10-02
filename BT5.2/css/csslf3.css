@@ -187,12 +187,8 @@ gap: 10px;
 }
 
 /* Media query for small screens */
-@media screen and (max-width: 1320px) {
-    body {
-        width: 532px;
-        margin: 0 auto;
-        height: auto;
-    }
+@media screen and (max-width: 1120px) {
+
 
     .lfSub {
         flex-direction: column;

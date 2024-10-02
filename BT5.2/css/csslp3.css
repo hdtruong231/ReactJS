@@ -209,7 +209,7 @@
 .lp3-bt button:active {
     background:#03aff3;
 }
-@media screen and (max-width: 1320px) {
+@media screen and (max-width: 1120px) {
     .lightPricing3{
         display: flex;
         padding: 50px 20px;
