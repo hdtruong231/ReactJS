@@ -135,6 +135,11 @@
     }
     
     .lf2secondHeading {
-        width: 300px;
+        width: 90%;
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        text-align: center; 
     }
+
 }
