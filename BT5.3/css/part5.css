@@ -1,0 +1,35 @@
+.part5 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 51px;
+    flex-direction: column;
+    padding: 50px 0;
+}
+.p5content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+.p2card p {
+    text-align: left;
+}
+@media screen and (min-width: 768px) {
+    
+    .part5 .p5content {
+        width: 660px;
+        margin-left: 70px;
+    }
+    .p5content h2{
+        text-align: left;
+        color: #252525;
+        font-family: Avenir;
+        font-size: 88px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 104px; /* 118.182% */       
+    }
+}

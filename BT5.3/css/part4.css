@@ -1,0 +1,111 @@
+.part4 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 51px;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.p4content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+
+.p4img {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    grid-auto-rows: 1fr;
+}
+
+.p4img img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.p4cards {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    /* 2 cột 1 hàng */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.p4card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.p4card h2 {
+    color: rgba(37, 37, 37, 0.25);
+    font-family: Avenir;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.p4card p {
+    text-align: left;
+}
+
+@media screen and (min-width: 1024px) {
+    .part4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 88px;
+    }
+
+    .p4content {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+
+        gap: 32px;
+        max-width: 470px;
+    }
+
+    .p4content h2 {
+        color: #252525;
+        font-family: Avenir;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 80px;
+        /* 125% */
+        text-align: left;
+    }
+
+    .p4content p {
+        text-align: left;
+    }
+
+    .p4content button {
+        margin-left: 0;
+    }
+
+    .p4img {
+        width: 100%;
+        grid-column: 1;
+        grid-row: 1/4;
+    }
+
+    .p4cards {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin-left: 30px;
+    }
+}

@@ -1,0 +1,162 @@
+.part10 {
+    width: 100%;
+    background: #2F2F2F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.p10content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.p10content h2 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#p10rh {
+    color: #FEC3C7;
+}
+
+#p10bh {
+    color: #9AD7F3;
+}
+
+#p10gh {
+    color: #6BDFDA;
+}
+
+.p10content p {
+    padding: 20px 0 0 0;
+    text-align: center;
+
+    color: white;
+}
+
+.part10 button {
+    border: none;
+    color: #232323;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 75% */
+}
+
+.p10gridimgs {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 100%;
+    grid-auto-rows: 1fr;
+
+}
+
+.p10gridimgs img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.p10gridimgs img:nth-child(n+5) {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .part10 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 5px;
+    }
+
+    .p10content {
+        /* column là cột */
+        grid-row: 1/3;
+        grid-column: 1;
+    }
+
+    .p10content h2 {
+        font-size: 60px;
+    }
+
+    .p10content p {
+        text-align: left;
+    }
+
+    .part10 button {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .p10gridimgs {
+        grid-column: 2;
+        grid-row: 1/4;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+    }
+
+    .p10gridimgs img:nth-child(n+5) {
+        display: block;
+    }
+
+    .p10gridimgs img:nth-child(n+13) {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .p10content {
+        align-self: flex-end;
+    }
+
+    .part10 button {
+        display: flex;
+        padding: 24px 48px;
+        margin: 0 35px;
+        gap: 10px;
+        border-radius: 36px;
+        background: #FFF;
+        font-size: 20px;
+    }
+
+    .p10content h2 {
+        font-size: 72px;
+    }
+
+    .p10content p {
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .p10gridimgs {
+        max-width: 742px;
+        grid-column: 2;
+        grid-row: 1/4;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 90%;
+        column-gap: 18px;
+        row-gap: 5px;
+    }
+
+    .p10gridimgs img:nth-child(n+13) {
+        display: block;
+    }
+}

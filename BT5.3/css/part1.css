@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.part1 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 51px;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.p1content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.heading {
+    color: #252525;
+    text-align: center;
+    font-family: Avenir;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.lorem {
+    color: rgba(37, 37, 37, 0.80);
+    text-align: center;
+    font-family: Avenir;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.blackbt {
+    width: 30%;
+    display: flex;
+    padding: 10px 0px;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 16px;
+    background: #252525;
+    color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.p1img {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    height: 100%;
+    grid-auto-rows: 1fr;
+}
+
+.p1img img {
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+.p1img img:nth-child(n+5) {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .p1content {
+
+        width: 68%;
+    }
+
+    .heading {
+        color: #252525;
+        text-align: center;
+        font-family: Avenir;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 80px;
+        /* 125% */
+    }
+    .p1content p {
+        text-align: center;
+    }
+    .lorem {
+        color: rgba(37, 37, 37, 0.80);
+        
+        font-family: Avenir;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .p1img {
+        width: 90%;
+        order: 1;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .p1img img:nth-child(n+5) {
+        display: block;
+    }
+
+    .p1img img:nth-child(n+7) {
+        display: none;
+    }
+
+    .blackbt {
+        width: 158px;
+        font-family: Avenir;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        /* 100% */
+    }
+}
+@media screen and (min-width: 1024px) {
+    .p1content {
+        width: 696px;
+    }
+    .p1img {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .p1img img:nth-child(n+7) {
+        display: block;
+    }
+
+    
+}
