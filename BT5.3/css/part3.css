@@ -37,7 +37,8 @@
         width: 95%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 100px;
+        column-gap: 100px;
+        row-gap: 16px;
     }
 
 
