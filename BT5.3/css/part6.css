@@ -8,9 +8,7 @@
     padding: 50px 0;
 }
 
-.p6icon {
-    display: none;
-}
+
 
 .p6content {
     display: flex;
@@ -148,7 +146,7 @@
 }
 
 #p6b1 {
-    bottom: 5%;
+    bottom: 10%;
     left: 0;
 }
 
