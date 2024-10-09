@@ -80,7 +80,9 @@
     height: 367px;
 
 }
-
+.p6icon {
+    margin-left: 50px;;
+}
 #p6i1 {
     width: 73%;
     position: absolute;
