@@ -197,10 +197,7 @@ button:hover {
 /* Media Queries */
 @media screen and (min-width: 533px) 
 {
-    .dh3secondHeading h2 
-    {
-        font-weight: 800;
-    }
+
     .darkHero3 {
         width: 100%;
         height: auto;
@@ -249,7 +246,7 @@ button:hover {
 
 
     .dh3secondHeading, .dh3subHeading, .dh3bt {
-        width: 531px;
+        width: 510px;
         margin: 0 auto;
     }
     .dh3secondHeading h2, .dh3subHeading p {
@@ -280,7 +277,10 @@ button:hover {
     }
 }
 @media screen and (min-width: 840px) {
-   
+    .dh3secondHeading h2 
+    {
+        font-weight: 800;
+    }
     .dh3nav-bar{
         gap: 10px;
     }
