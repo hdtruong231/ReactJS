@@ -1,0 +1,90 @@
+$bgcolor: #cdcdcd;
+$text1: #2d3748;
+$text2: #718096;
+$text3: #4fd1c5;
+$font: Hervetica, sans-serif;
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin style-display($dl, $g, $fd) {
+  display: $dl;
+  gap: $g;
+  flex-direction: $fd;
+}
+
+@mixin style-text($size, $weight, $color, $lineheight) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $lineheight;
+}
+
+@mixin style-image($size, $radius) {
+  width: $size;
+  height: $size;
+  border-radius: $radius ;
+}
+
+body {
+  background-color: $bgcolor;
+  @include flex-center();
+  font-family: $font;
+  height: 100vh;
+}
+
+.content {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 475px;
+  text-align: left;
+  padding: 28px 21px;
+  @include style-display(flex, 10px, column);
+
+  strong {
+    @include style-text(18px, 700, $text1, 140%);
+    padding-left: 5px;
+  }
+}
+
+.cards {
+  width: 100%;
+  @include style-display(flex, 30px, column);
+}
+
+.card {
+  @include style-display(flex, 20px, row);
+}
+
+.card {
+  .image {
+    @include style-image(50px, 15px);
+    img {
+      border-radius: 15px;
+    }
+  }
+
+  .textcontent {
+    padding-top: 10px;
+    @include style-display(flex, 2px, column);
+
+    strong {
+      @include style-text(14px, 600, $text1, 140%);
+    }
+
+    small {
+      @include style-text(14px, 400, $text2, 140%);
+    }
+  }
+
+  a {
+    @include style-text(10px, 700, $text3, 150%);
+    text-decoration: none;
+    margin: auto 0 auto auto;
+    padding-right: 20px;
+  }
+}
