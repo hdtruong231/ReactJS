@@ -1,0 +1,115 @@
+$bgcolor: #cdcdcd;
+$text1: #2d3748;
+$text2: #718096;
+$text3: #4fd1c5;
+$text4: #a0aec0;
+$font: Hervetica, sans-serif;
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin style-display($dl, $g, $fd) {
+    display: $dl ;
+    gap: $g;
+    flex-direction: $fd;
+}
+
+@mixin style-text($size, $weight, $color, $lineheight) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    line-height: $lineheight;
+}
+
+@mixin style-image($size, $radius) {
+    width: $size;
+    height: $size;
+    border-radius: $radius ;
+}
+
+body {
+    background-color: $bgcolor !important;
+    @include flex-center();
+    font-family: $font;
+    height: 100vh;
+}
+
+button {
+    background-color: $text3 !important;
+    color: white !important;
+    border: none !important;
+    width: 100% !important;
+    border-radius: 5px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    padding: 10px !important;
+}
+
+.container {
+    @include style-display(row, 20px, column);
+    background-color: white;
+    width: 452px !important;
+    border-radius: 15px;
+    margin: 0 auto;
+
+}
+
+form {
+    margin: 50px;
+}
+
+.form-registers {
+    h2 {
+        @include style-text(18px, 700, $text1, 1.4);
+    }
+
+    p {
+        @include style-text(18px, 700, $text4, 1.4);
+    }
+}
+
+.form-check-input:checked {
+    background-color: $text3 !important;
+    border-color: $text3 !important;
+    box-shadow: none !important;
+}
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-input:not(:checked) {
+
+    border-color: $text2 !important;
+    box-shadow: none !important;
+    color: $text3 !important;
+    border: 1px solid $text2 !important;
+}
+
+.another {
+    @include style-text(14px, 400, $text2, 1.4);
+    a {
+        @include style-text(14px, 700, $text3, 1.4);
+        text-decoration: none;
+    }
+}
+.form-check-label {
+    @include style-text(12px, 400, $text1, 1);
+    transform: translateY(-2px);
+}
+input::placeholder {
+    color: $text4 !important;
+}
+input:focus {
+    border-color: $text3 !important;
+    box-shadow: none !important;
+}
+button:hover {
+    background-color: darken($text3, 10%) !important;
+}
+button:active {
+    background-color: darken($text3, 20%) !important;
+}
