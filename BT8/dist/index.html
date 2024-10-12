@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-pdw-XWde.css">
+</head>
+
+<body class="bg-gray-300 flex justify-center items-center h-screen" style="font-family: Helvetica, Arial, sans-serif;">
+    <div class="containe bg-white rounded-2xl">
+
+        <table class="table-auto m-8 rounded-full">
+            <caption class="text-lg text-gray-700 font-bold text-left h-10">Authors Table</caption>
+            <thead class="border-b-2">
+                <tr class="h-8 uppercase text-gray-400 text-left font-bold leading-normal" style="font-size: 10px;">
+                    <th class="" style="width: 600px;">Author</th>
+                    <th class="w-40">Function</th>
+                    <th class="w-40 pl-4">Status</th>
+                    <th class="w-40">Employed</th>
+                    <th class="w-16"></th>
+                </tr>
+            </thead>
+            <tbody class="divide-y-2">
+                <tr class="h-16">
+                    <td class="flex gap-2 items-center h-16">
+                        <img src="/assets/img1-avi0-Xb0.png" alt="img1" class="w-12 h-12 rounded-xl mr-4">
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Esthera Jackson</strong>
+                            <small class="text-gray-400 text-sm font-normal ">exthere@simmmple.com</small>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Manager</strong>
+                            <small class="text-gray-400 text-sm font-normal ">Organization</small>
+                        </div>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-green-400 hover:bg-green-600 text-white text-sm font-bold py-1 px-3 rounded-lg translate-y-0.5">Online</button>
+                    </td>
+                    <td>
+                        <strong class="text-gray-700 text-sm font-bold translate-y-0.5">23/01/04</strong>
+                    </td>
+                    <td>
+                        <button class="text-gray-400 text-xs font-bold translate-y-0.5">
+                            Edit
+                        </button>
+                    </td>
+
+                </tr>
+                <tr class="h-16  ">
+                    <td class="flex gap-2 items-center h-16">
+                        <img src="/assets/img2-C_efzzGa.png" alt="img1" class="w-12 h-12 rounded-xl mr-4">
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Alexa Liras</strong>
+                            <small class="text-gray-400 text-sm font-normal ">alexa@simmmple.com</small>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Programer</strong>
+                            <small class="text-gray-400 text-sm font-normal ">Developer</small>
+                        </div>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-500 text-white text-sm font-bold py-1 px-3 rounded-lg translate-y-0.5">Offline</button>
+                    </td>
+                    <td>
+                        <strong class="text-gray-700 text-sm font-bold translate-y-0.5">23/01/04</strong>
+                    </td>
+                    <td>
+                        <button class="text-gray-400 text-xs font-bold translate-y-0.5">
+                            Edit
+                        </button>
+                    </td>
+
+                </tr>
+                <tr class="h-16  ">
+                    <td class="flex gap-2 items-center h-16">
+                        <img src="data:image/png;base64,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" alt="img1" class="w-12 h-12 rounded-xl mr-4">
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Laurent Michael</strong>
+                            <small class="text-gray-400 text-sm font-normal ">laurent@simmmple.com</small>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Executive</strong>
+                            <small class="text-gray-400 text-sm font-normal ">Projects</small>
+                        </div>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-green-400 hover:bg-green-600 text-white text-sm font-bold py-1 px-3 rounded-lg translate-y-0.5">Online</button>
+                    </td>
+                    <td>
+                        <strong class="text-gray-700 text-sm font-bold translate-y-0.5">23/01/04</strong>
+                    </td>
+                    <td>
+                        <button class="text-gray-400 text-xs font-bold translate-y-0.5">
+                            Edit
+                        </button>
+                    </td>
+
+                </tr>
+                <tr class="h-16  ">
+                    <td class="flex gap-2 items-center h-16">
+                        <img src="/assets/img4-BQ3xLsdx.png" alt="img1" class="w-12 h-12 rounded-xl mr-4">
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Freduardo Hill</strong>
+                            <small class="text-gray-400 text-sm font-normal ">freduardo@simmmple.com</small>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Manager</strong>
+                            <small class="text-gray-400 text-sm font-normal ">Organization</small>
+                        </div>
+                    </td>
+                    <td>
+                        <button
+                        class="bg-green-400 hover:bg-green-600 text-white text-sm font-bold py-1 px-3 rounded-lg translate-y-0.5">Online</button>
+
+                    </td>
+                    <td>
+                        <strong class="text-gray-700 text-sm font-bold translate-y-0.5">23/01/04</strong>
+                    </td>
+                    <td>
+                        <button class="text-gray-400 text-xs font-bold translate-y-0.5">
+                            Edit
+                        </button>
+                    </td>
+
+                </tr>
+                <tr class="h-16  ">
+                    <td class="flex gap-2 items-center h-16">
+                        <img src="data:image/png;base64,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" alt="img1" class="w-12 h-12 rounded-xl mr-4">
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Daniel Thomas</strong>
+                            <small class="text-gray-400 text-sm font-normal ">daniel@simmmple.com</small>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Programer</strong>
+                            <small class="text-gray-400 text-sm font-normal ">Developer</small>
+                        </div>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-500 text-white text-sm font-bold py-1 px-3 rounded-lg translate-y-0.5">Offline</button>
+                    </td>
+                    <td>
+                        <strong class="text-gray-700 text-sm font-bold translate-y-0.5">23/01/04</strong>
+                    </td>
+                    <td>
+                        <button class="text-gray-400 text-xs font-bold translate-y-0.5">
+                            Edit
+                        </button>
+                    </td>
+
+                </tr>
+                <tr class="h-16  ">
+                    <td class="flex gap-2 items-center h-16">
+                        <img src="/assets/img6-TECN46Ks.png" alt="img1" class="w-12 h-12 rounded-xl mr-4">
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Mark Wilson</strong>
+                            <small class="text-gray-400 text-sm font-normal ">mark@simmmple.com</small>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-0 justify-center">
+                            <strong class="text-gray-700 text-sm font-bold translate-y-0.5">Designer</strong>
+                            <small class="text-gray-400 text-sm font-normal ">UX/UI Design </small>
+                        </div>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-500 text-white text-sm font-bold py-1 px-3 rounded-lg translate-y-0.5">Offline</button>
+                    </td>
+                    <td>
+                        <strong class="text-gray-700 text-sm font-bold translate-y-0.5">23/01/04</strong>
+                    </td>
+                    <td>
+                        <button class="text-gray-400 text-xs font-bold translate-y-0.5">
+                            Edit
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+
+</html>
