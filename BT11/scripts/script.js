@@ -5,7 +5,11 @@ form.addEventListener('submit', function(event) {
     console.log('Form submitted');
     let obj = {};
     let checkbox = document.getElementById('checkbox');
-       obj['checkbox'] = checkbox.value;
+     if (checkbox.checked) {
+        obj['checkbox'] = checkbox.value;
+    } else {
+        obj['checkbox'] = 'off';
+    }
     
     let radio = document.getElementsByName('radio');
     for (let i = 0; i < radio.length; i++) {
