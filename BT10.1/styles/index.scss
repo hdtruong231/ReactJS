@@ -1,0 +1,165 @@
+$text1: rgba(45, 55, 72, 1);
+$text2: rgba(160, 174, 192, 1);
+$bgcolor: rgba(248, 249, 250, 1);
+$bgcolor2: white;
+$bgcolor3: rgba(79, 209, 197, 1);
+$font: Hervetica, sans-serif;
+
+@mixin style-display($dl, $g, $fd) {
+    display: $dl ;
+    gap: $g;
+    flex-direction: $fd;
+}
+
+@mixin style-text($size, $weight, $color, $lineheight) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    line-height: $lineheight;
+}
+svg {
+    cursor: pointer;
+}
+body {
+    background-color: $bgcolor !important;
+    @include style-display(flex, 12px, row);
+    font-family: $font;
+    margin: 32px !important;
+
+}
+
+.sidebar {
+    background-color: $bgcolor;
+    ;
+    width: 224px;
+    @include style-display(flex, 4px, column);
+
+    .logo {
+        @include style-display(flex, 0px, row);
+        align-items: center;
+
+        p {
+            @include style-text(14px, 700, $text1, 1.5);
+            margin: 0;
+        }
+        padding: 16px;
+    }
+
+    svg {
+        padding: 0;
+    }
+    ul {
+        border: none;
+        padding: 0;
+    }
+    ul li {
+        @include style-display(flex, 12px, row);
+        padding: 12px 16px;
+        align-items: center !important;
+        background-color: $bgcolor;
+        .svgs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            border-radius: 12px;
+            background-color: $bgcolor2;
+        }
+        p{
+            @include style-text(12px, 700, $text2, 1.5);
+            margin: 0 ;
+        }
+    }
+    ul li:hover {
+        background-color: $bgcolor2;
+        border: 1px solid $bgcolor;
+        border-radius: 12px;
+        .svgs {
+            background-color: $bgcolor3;
+            svg  path {
+                fill: white;
+            }
+        }
+        p{
+            @include style-text(12px, 700, $text1, 1.5);
+        }
+
+    }
+    ul li:active{
+        background-color: #cbffda;
+    }
+    p {
+        @include style-text(14px, 700, $text1, 1.5);
+        padding-left: 16px;
+    }
+
+}
+.dashbroad{
+    @include style-display(flex, 20px, column);
+    width: 100%;
+    height: 650px;
+    .breadcrumb{
+        @include style-display(flex, 0, row);
+        margin: 0;
+        justify-content: space-between;
+        .pages
+        {
+            .sp1{
+                @include style-text(12px, 400, $text2, 1.5);
+            }
+            .sp2{
+                @include style-text(12px, 400, $text1, 1.5);
+            }
+            p {
+                @include style-text(14px, 700, $text1, 1.5);
+                margin: 0;
+            }
+        }
+        .loginbar {
+            @include style-display(flex, 18px, row);
+            align-items: center;
+            padding-right: 20px;
+            .search{
+                @include style-display(flex, 16px, row);
+                padding: 8px 12px;
+                border-radius: 16px;
+                background-color: $bgcolor2;
+                align-items: center;
+                input{
+                    border: none;
+                    background-color: $bgcolor2;
+                    @include style-text(14px, 400, $text2, 1.5);
+                }
+                input:active, input:focus{
+                    outline: none;
+                }
+            }
+            .loginbt{
+                @include style-display(flex, 16px, row);
+                
+                align-items: center;
+                a{
+                    text-decoration: none;
+                } 
+                p{
+                    @include style-text(12px, 700, $text2, 1.5);
+                    margin: 0;
+                    
+                }
+                
+            }
+        }
+    }
+    .broadcontent{
+        @include style-display(flex, 20px, row);
+        width: auto;
+        height: 100%;
+        padding: 24px;
+        border-radius: 15px;
+        background-color: $bgcolor2;
+        p {
+            @include style-text(18px, 700, $text1, 1.5);
+        }
+    }
+
+}
