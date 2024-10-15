@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+  
+  <link rel="stylesheet" crossorigin href="/assets/index-DU96DZte.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <form id="myform" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="checkbox">
+                Checkbox Input
+            </label>
+            <input class="mr-2 leading-tight" type="checkbox" id="checkbox">
+            <span class="text-sm">Check me</span>
+        </div>
+
+        <div class="mb-4">
+            <span class="block text-gray-700 text-sm font-bold mb-2">Radio Input</span>
+            <div>
+                <input class="mr-2 leading-tight" type="radio" id="radio1" name="radio" value="option1">
+                <label class="text-sm" for="radio1">Option 1</label>
+            </div>
+            <div>
+                <input class="mr-2 leading-tight" type="radio" id="radio2" name="radio" value="option2">
+                <label class="text-sm" for="radio2">Option 2</label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="text">
+                Text Input
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="text" type="text" placeholder="Enter text here">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="color">
+                Color Input
+            </label>
+            <input class="shadow appearance-none border rounded w-full h-10" id="color" type="color">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="select">
+                Select an option
+            </label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="select">
+                
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+                Date Picker
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="range">
+                Range Slider
+            </label>
+            <input class="w-full" id="range" type="range" min="0" max="100" value="50">
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
