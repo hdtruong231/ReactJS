@@ -126,7 +126,12 @@ searchBtn.addEventListener('click', function () {
         tbody.innerHTML = html;
     }
 });
-
+const buttonClose = document.getElementById('closeModal');
+buttonClose.addEventListener('click', function () {
+    const form = document.getElementById('themsv');
+    form.style.display = 'none';
+    formAdd.reset();
+});
 
 
 

@@ -29,5 +29,6 @@ formAdd.addEventListener('submit', function (e) {
     };
     students.push(obj);
     renderTable();
+    formAdd.reset();
     console.log(obj);
 });
