@@ -6,7 +6,7 @@ const text = document.getElementById('textHeading');
 let editMSSV = false;
 let students = [];
 // pagination
-const itemsPerPage = 6;
+const itemsPerPage = 2;
 let currentPage = 1;
 const listPage = document.getElementById('listPage');
 const pages = document.getElementById('pages');
@@ -21,7 +21,13 @@ function setdisable() {
         document.getElementById('prev').classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700');
         document.getElementById('prev').classList.remove('bg-gray-300', 'text-black');
     }
-    if (currentPage === Math.ceil(students.length / itemsPerPage)) {
+    let count = 0;
+    if (resultcheck === true) {
+        count = Math.ceil(result.length / itemsPerPage);
+    } else { count = Math.ceil(students.length / itemsPerPage); }
+        
+
+    if (currentPage === count) {
         document.getElementById('next').setAttribute('disabled', true);
         document.getElementById('next').classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
         document.getElementById('next').classList.add('bg-gray-300', 'text-black');
@@ -34,6 +40,10 @@ function setdisable() {
 document.getElementById('prev').addEventListener('click', function () {
     if (currentPage > 1) {
         currentPage--;
+        if (resultcheck === true) {
+            renderTable(result, currentPage);
+        } else
+        
         renderTable(students, currentPage);
         document.querySelectorAll('.page').forEach(function (button) {
             button.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
@@ -45,8 +55,17 @@ document.getElementById('prev').addEventListener('click', function () {
     }
 });
 document.getElementById('next').addEventListener('click', function () {
-    if (currentPage < Math.ceil(students.length / itemsPerPage)) {
+    let count = 0;
+    if (resultcheck === true) {
+        count = Math.ceil(result.length / itemsPerPage);
+    } else { count = Math.ceil(students.length / itemsPerPage); }
+
+    if (currentPage < count) {
         currentPage++;
+        if (resultcheck === true) {
+            renderTable(result, currentPage);
+        } else
+        
         renderTable(students, currentPage);
         document.querySelectorAll('.page').forEach(function (button) {
             button.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
@@ -61,6 +80,10 @@ document.getElementById('next').addEventListener('click', function () {
 pages.addEventListener('click', function (e) {
     if (e.target.classList.contains('page')) {
         currentPage = parseInt(e.target.dataset.page);
+        if (resultcheck === true) {
+            renderTable(result, currentPage);
+        } else
+        
         renderTable(students, currentPage);
         document.querySelectorAll('.page').forEach(function (button) {
             button.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
@@ -82,7 +105,7 @@ function setPages(array, itemsPerPage) {
     const pages = Math.ceil(array.length / itemsPerPage);
     let html = '';
     for (let i = 1; i <= pages; i++) {
-        html += `<button class="page ${i === 1 ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold text-white' : 'bg-gray-300 hover:bg-gray-500 text-black'}  font-bold py-2 px-4 rounded" data-page="${i}">${i}</button>`;
+        html += `<button class="page ${i === 1 ? 'bg-blue-500 hover:bg-blue-700 nfont-bold text-white' : 'bg-gray-300 hover:bg-gray-500 text-black'}  font-bold py-2 px-4 rounded" data-page="${i}">${i}</button>`;
     }
     listPage.innerHTML = html;
 }
@@ -192,19 +215,22 @@ const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', function () {
     const searchValue = search.value;
     if (searchValue === '') {
+        resultcheck = false;
         renderTable(students);
         setPages(students, itemsPerPage);
+        setdisable();
     } else {
-        const result = students.filter(student => student.name.toLowerCase().includes(searchValue.toLowerCase()));
+        resultcheck = true;
+        result = students.filter(student => student.name.toLowerCase().includes(searchValue.toLowerCase()));
         let tbody = document.getElementById('listStudent');
-        let html = '';
         renderTable(result);
         setPages(result, itemsPerPage);
         setdisable();
         if (result.length === 0) {
-            html = '<tr><td class="border border-gray-300 px-4 py-2" colspan="8">Không tìm thấy sinh viên</td></tr>';
+          let  html = '<tr><td class="border border-gray-300 px-4 py-2" colspan="8">Không tìm thấy sinh viên</td></tr>';
+          tbody.innerHTML = html;
         }
-        tbody.innerHTML = html;
+        
     }
 });
 function renderSelectYear() {
@@ -236,12 +262,16 @@ filStudent.addEventListener('click', function () {
     locsv.style.display = 'flex';
 });
 const formFilter = document.getElementById('formFilter');
+let resultcheck = false;
+let result = [];
+
 formFilter.addEventListener('submit', function (e) {
     e.preventDefault();
     const yearValue = formFilter.yearFilter.value;
     const genderValue = formFilter.gFilter.value;
     const departmentValue = formFilter.dFilter.value;
-    let result = students;
+    result = students;
+    resultcheck = true;
     if (yearValue !== '') {
         result = result.filter(student => student.birthdate.includes(yearValue));
     }
@@ -253,13 +283,16 @@ formFilter.addEventListener('submit', function (e) {
     }
     renderTable(result);
     setPages(result, itemsPerPage);
+    currentPage = 1;
     setdisable();
     const locsv = document.getElementById('locsv');
     locsv.style.display = 'none';
 });
 formFilter.addEventListener('reset', function () {
+    resultcheck = false;
     renderTable(students);
     setPages(students, itemsPerPage);
+    currentPage = 1;
     setdisable();
     formFilter.reset();
     const locsv = document.getElementById('locsv');

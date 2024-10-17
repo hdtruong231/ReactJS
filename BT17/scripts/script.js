@@ -109,12 +109,13 @@ searchBtn.addEventListener('click', function () {
     } else {
         const result = students.filter(student => student.name.toLowerCase().includes(searchValue.toLowerCase())) ;
         let tbody = document.getElementById('listStudent');
-        let html = '';
+        
         renderTable(result);
         if (result.length === 0) {
-            html = '<tr><td class="border border-gray-300 px-4 py-2" colspan="8">Không tìm thấy sinh viên</td></tr>';
+           let html = '<tr><td class="border border-gray-300 px-4 py-2" colspan="8">Không tìm thấy sinh viên</td></tr>'; 
+            tbody.innerHTML = html;
         }
-        tbody.innerHTML = html;
+        
     }
 });
 function renderSelectYear()
