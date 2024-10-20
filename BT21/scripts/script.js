@@ -25,7 +25,7 @@ function setdisable() {
     if (resultcheck === true) {
         count = Math.ceil(result.length / itemsPerPage);
     } else { count = Math.ceil(students.length / itemsPerPage); }
-        
+
 
     if (currentPage === count) {
         document.getElementById('next').setAttribute('disabled', true);
@@ -43,8 +43,8 @@ document.getElementById('prev').addEventListener('click', function () {
         if (resultcheck === true) {
             renderTable(result, currentPage);
         } else
-        
-        renderTable(students, currentPage);
+
+            renderTable(students, currentPage);
         document.querySelectorAll('.page').forEach(function (button) {
             button.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
             button.classList.add('bg-gray-300', 'text-black', 'hover:bg-gray-500');
@@ -66,8 +66,8 @@ document.getElementById('next').addEventListener('click', function () {
         if (resultcheck === true) {
             renderTable(result, currentPage);
         } else
-        
-        renderTable(students, currentPage);
+
+            renderTable(students, currentPage);
         document.querySelectorAll('.page').forEach(function (button) {
             button.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
             button.classList.add('bg-gray-300', 'text-black', 'hover:bg-gray-500');
@@ -86,8 +86,8 @@ pages.addEventListener('click', function (e) {
         if (resultcheck === true) {
             renderTable(result, currentPage);
         } else
-        
-        renderTable(students, currentPage);
+
+            renderTable(students, currentPage);
         document.querySelectorAll('.page').forEach(function (button) {
             button.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
             button.classList.add('bg-gray-300', 'text-black', 'hover:bg-gray-500');
@@ -149,6 +149,7 @@ const huyBtn = document.getElementById('huyBtn');
 deleteBtn.addEventListener('click', function () {
     students = students.filter(student => student.MSSV !== deleteModal.dataset.mssv);
     saveData();
+    deleteModal.style.display = 'none';
     resultcheck = false;
     result = [];
     formFilter.reset();
@@ -156,7 +157,7 @@ deleteBtn.addEventListener('click', function () {
     setPages(students, itemsPerPage);
     setdisable();
     highlightColumn(colHighlight);
-    deleteModal.style.display = 'none';
+
 });
 huyBtn.addEventListener('click', function () {
     deleteModal.style.display = 'none';
@@ -188,11 +189,10 @@ document.addEventListener('click', function (e) {
         }
     }
 });
-
+let currentEditStudent = null;
 formAdd.addEventListener('submit', function (e) {
-    let obj = {};
     e.preventDefault();
-    obj = {
+    let obj = {
         name: formAdd.name.value.trim(),
         MSSV: formAdd.MSSV.value.trim(),
         email: formAdd.email.value.trim(),
@@ -214,24 +214,21 @@ formAdd.addEventListener('submit', function (e) {
             }
         }
         students.push(obj);
+        saveData();
+        resultcheck = false;
+        result = [];
+        // reset form lọc
+        formFilter.reset();
+        renderTable(students);
+        setPages(students, itemsPerPage);
+        setdisable();
+        formAdd.reset();
     } else {
-        for (let i = 0; i < students.length; i++) {
-            if (students[i].MSSV === obj.MSSV) {
-                students[i] = obj;
-                editMSSV = false;
-            }
-        }
+        currentEditStudent = obj;
+        editModal.style.display = 'flex';
+        editMSSV = false;
     }
     //renderTable(students);
-    saveData();
-    resultcheck = false;
-    result = [];
-    // reset form lọc
-    formFilter.reset();
-    renderTable(students);
-    setPages(students, itemsPerPage);
-    setdisable();
-    formAdd.reset();
     const form = document.getElementById('themsv');
     form.style.display = 'none';
     console.log(obj);
@@ -261,10 +258,10 @@ searchBtn.addEventListener('click', function () {
         setPages(result, itemsPerPage);
         setdisable();
         if (result.length === 0) {
-          let  html = '<tr><td class="border border-gray-300 px-4 py-2" colspan="8">Không tìm thấy sinh viên</td></tr>';
-          tbody.innerHTML = html;
+            let html = '<tr><td class="border border-gray-300 px-4 py-2" colspan="8">Không tìm thấy sinh viên</td></tr>';
+            tbody.innerHTML = html;
         }
-        
+
     }
 });
 function renderSelectYear() {
@@ -293,7 +290,16 @@ buttonCloseFilter.addEventListener('click', function () {
 const filStudent = document.getElementById('filStudent');
 filStudent.addEventListener('click', function () {
     clearSearch.click();
+
     const locsv = document.getElementById('locsv');
+    const yearValue = formFilter.yearFilter.value;
+    const genderValue = formFilter.gFilter.value;
+    const departmentValue = formFilter.dFilter.value;
+    if (yearValue !== '' || genderValue !== '' || departmentValue !== '') {
+        renderTable(result);
+    } else { 
+        renderTable(students); 
+    }
     locsv.style.display = 'flex';
 });
 const formFilter = document.getElementById('formFilter');
@@ -424,7 +430,7 @@ function highlightColumn(index) {
 table.querySelectorAll('.ths').forEach((header, index) => {
     header.addEventListener('click', () => {
         // Thực hiện sắp xếp...
-        
+
         // Sau khi sắp xếp xong, highlight cột
         highlightColumn(index);
     });
@@ -440,7 +446,7 @@ table.querySelectorAll('.ths').forEach((header, index) => {
             }
         });
         const asc = header.classList.contains('asc');
-        
+
         // Sắp xếp toàn bộ dữ liệu students hoặc result
         if (resultcheck === true) {
             sortData(result, index, !asc);
@@ -454,7 +460,7 @@ table.querySelectorAll('.ths').forEach((header, index) => {
         currentPage = 1; // Đặt lại trang đầu tiên sau khi sắp xếp
         setdisable();
         highlightColumn(index);
-        
+
         header.classList.toggle('asc', !asc);
 
         // Xử lý hiển thị SVG
@@ -506,10 +512,10 @@ function getData() {
 
 window.addEventListener('beforeunload', saveData);
 window.addEventListener('load', getData);
-const modal =document.getElementById('themsv');
-const modal2 =document.getElementById('locsv');
-const modal3 =document.getElementById('deleteModal');
-
+const modal = document.getElementById('themsv');
+const modal2 = document.getElementById('locsv');
+const modal3 = document.getElementById('deleteModal');
+const modal4 = document.getElementById('editModal');
 
 modal.addEventListener('click', function (event) {
     if (event.target === this) { // Kiểm tra xem click có phải trên modal không
@@ -521,10 +527,45 @@ modal2.addEventListener('click', function (event) {
         modal2.style.display = 'none';
     }
 });
-
-
 modal3.addEventListener('click', function (event) {
     if (event.target === this) {
         modal3.style.display = 'none';
     }
+});
+modal4.addEventListener('click', function (event) {
+    if (event.target === this) {
+        modal4.style.display = 'none';
+    }
+});
+// Modal update
+const editModal = document.getElementById('editModal');
+const editBtn = document.getElementById('editBtn');
+const closeModalEdit = document.querySelector('.closeModalUpdate');
+const huyBtnEdit = document.getElementById('huyBtnEdit');
+
+huyBtnEdit.addEventListener('click', function () {
+    editModal.style.display = 'none';
+}
+);
+closeModalEdit.addEventListener('click', function () {
+    editModal.style.display = 'none';
+});
+editBtn.addEventListener('click', function () {
+    editModal.style.display = 'none';
+    if (currentEditStudent) {
+        // Tìm và cập nhật đối tượng trong mảng students
+        let index = students.findIndex(student => student.MSSV === currentEditStudent.MSSV);
+        students[index] = currentEditStudent;
+        console.log('Data updatedsdsdsdsdsdd');
+    }
+    saveData();
+    resultcheck = false;
+    result = [];
+    // reset form lọc
+    formFilter.reset();
+    renderTable(students);
+    setPages(students, itemsPerPage);
+    setdisable();
+    formAdd.reset();
+    
 });
