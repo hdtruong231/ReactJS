@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BT21</title>
-  <script type="module" crossorigin src="/assets/index-Br3BYLsE.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-IICiZlag.css">
+  <script type="module" crossorigin src="/assets/index-BRh9nhhp.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DCbtV1nd.css">
 </head>
 
 <body class="bg-gray-100 flex p-8 items-start w-full min-h-screen">
@@ -14,15 +14,19 @@
         style="min-width: 100%; height: 670px;">
         <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Danh sách sinh viên</h1>
         <div class="flex gap-10 justify-end mb-6">
-            <div>
-                <input type="text" id="search" placeholder="Tìm kiếm theo tên"
+            <div class="flex gap-4">
+                <div class="relative">
+                    <input type="text" id="search" placeholder="Tìm kiếm theo tên"
                     class=" px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <button id="searchBtn"
+                    <span id="clearSearch" class=" absolute top-1 right-2 text-2xl font-bold cursor-pointer">&times;</span>
+              
+                </div>
+                  <button id="searchBtn"
                     class=" bg-blue-500 hover:bg-blue-700 active:bg-blue-950 text-white font-bold py-2 px-4 rounded">Tìm
                     kiếm</button>
             </div>
             <button id="addStudent"
-                class="bg-blue-500 hover:bg-blue-700 active:bg-blue-950 text-white font-bold py-2 px-4 rounded">Thêm
+                class="bg-blue-500 hover:bg-blue-700  active:bg-blue-950 text-white font-bold py-2 px-4 rounded">Thêm
                 sinh viên</button>
             <button id="filStudent"
                 class="bg-green-500 hover:bg-green-700 active:bg-green-950 text-white font-bold py-2 px-4 rounded">Lọc</button>
@@ -35,7 +39,7 @@
                             <p>Tên</p>
                             <div class="flex absolute right-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                    class="sort-asc hidden sort size-4 cursor-pointer">
+                                    class="sort-asc  sort size-4 cursor-pointer">
                                     <path fill-rule="evenodd"
                                         d="M7.47 3.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1-1.06 1.06L8 4.81 5.28 7.53a.75.75 0 0 1-1.06-1.06l3.25-3.25Zm-3.25 8.25 3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 1 1-1.06 1.06L8 9.81l-2.72 2.72a.75.75 0 0 1-1.06-1.06Z"
                                         clip-rule="evenodd" />
@@ -48,7 +52,7 @@
                             <p>MSSV</p>
                             <div class="flex absolute right-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                    class="sort-asc hidden sort size-4 cursor-pointer">
+                                    class="sort-asc  sort size-4 cursor-pointer">
                                     <path fill-rule="evenodd"
                                         d="M7.47 3.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1-1.06 1.06L8 4.81 5.28 7.53a.75.75 0 0 1-1.06-1.06l3.25-3.25Zm-3.25 8.25 3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 1 1-1.06 1.06L8 9.81l-2.72 2.72a.75.75 0 0 1-1.06-1.06Z"
                                         clip-rule="evenodd" />
@@ -61,7 +65,7 @@
                             <p>Email</p>
                             <div class="flex absolute right-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                    class="sort-asc hidden sort size-4 cursor-pointer">
+                                    class="sort-asc  sort size-4 cursor-pointer">
                                     <path fill-rule="evenodd"
                                         d="M7.47 3.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1-1.06 1.06L8 4.81 5.28 7.53a.75.75 0 0 1-1.06-1.06l3.25-3.25Zm-3.25 8.25 3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 1 1-1.06 1.06L8 9.81l-2.72 2.72a.75.75 0 0 1-1.06-1.06Z"
                                         clip-rule="evenodd" />
@@ -74,7 +78,7 @@
                             <p>Khoa</p>
                             <div class="flex absolute right-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                    class="sort-asc hidden sort size-4 cursor-pointer">
+                                    class="sort-asc sort size-4 cursor-pointer">
                                     <path fill-rule="evenodd"
                                         d="M7.47 3.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1-1.06 1.06L8 4.81 5.28 7.53a.75.75 0 0 1-1.06-1.06l3.25-3.25Zm-3.25 8.25 3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 1 1-1.06 1.06L8 9.81l-2.72 2.72a.75.75 0 0 1-1.06-1.06Z"
                                         clip-rule="evenodd" />
@@ -87,7 +91,7 @@
                             <p>Giới tính</p>
                             <div class="flex absolute right-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                    class="sort-asc hidden sort size-4 cursor-pointer">
+                                    class="sort-asc  sort size-4 cursor-pointer">
                                     <path fill-rule="evenodd"
                                         d="M7.47 3.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1-1.06 1.06L8 4.81 5.28 7.53a.75.75 0 0 1-1.06-1.06l3.25-3.25Zm-3.25 8.25 3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 1 1-1.06 1.06L8 9.81l-2.72 2.72a.75.75 0 0 1-1.06-1.06Z"
                                         clip-rule="evenodd" />
@@ -100,7 +104,7 @@
                             <p>Ngày Sinh</p>
                             <div class="flex absolute right-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                    class="sort-asc hidden sort size-4 cursor-pointer">
+                                    class="sort-asc  sort size-4 cursor-pointer">
                                     <path fill-rule="evenodd"
                                         d="M7.47 3.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1-1.06 1.06L8 4.81 5.28 7.53a.75.75 0 0 1-1.06-1.06l3.25-3.25Zm-3.25 8.25 3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 1 1-1.06 1.06L8 9.81l-2.72 2.72a.75.75 0 0 1-1.06-1.06Z"
                                         clip-rule="evenodd" />
@@ -131,7 +135,7 @@
     </div>
 
     <!-- Modal Form -->
-    <div id="themsv" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-center justify-center z-50 ">
+    <div id="themsv" class="modellll fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-center justify-center z-50 ">
         <div class="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
             <button id="closeModal"
                 class="absolute top-4 right-4  text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -199,7 +203,7 @@
         </div>
     </div>
     <!-- Form Lọc-->
-    <div id="locsv" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-start justify-center z-50 ">
+    <div id="locsv" class="modelll fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-start justify-center z-50 ">
         <div class="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
             <button id="closefil" class="absolute top-4 right-4  text-gray-500 hover:text-gray-700 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -255,9 +259,9 @@
         </div>
     </div>
     <!-- Modal confirm-->
-    <div id="deleteModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-center justify-center z-50">
-        <div id="modalConfirm" class="model-content relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-          <span class="closeModalConfirm absolute top-2 right-4 text-2xl font-bold cursor-pointer">&times;</span>
+    <div id="deleteModal" class="modelll fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-center justify-center z-50">
+        <div id="modalConfirm" class="relative model-content bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <span class="closeModalConfirm absolute top-2 right-4 text-2xl font-bold cursor-pointer">&times;</span>
           <h2 class="text-xl font-semibold mb-4">Xác nhận</h2>
           <p class="mb-6 text-gray-600">Bạn có chắc chắn muốn xóa sinh viên này?</p>
           <div class="flex justify-end space-x-4">

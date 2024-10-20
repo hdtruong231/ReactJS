@@ -6,7 +6,7 @@ const text = document.getElementById('textHeading');
 let editMSSV = false;
 let students = [];
 // pagination
-const itemsPerPage = 2;
+const itemsPerPage = 10;
 let currentPage = 1;
 const listPage = document.getElementById('listPage');
 const pages = document.getElementById('pages');
@@ -14,12 +14,12 @@ const pages = document.getElementById('pages');
 function setdisable() {
     if (currentPage === 1) {
         document.getElementById('prev').setAttribute('disabled', true);
-        document.getElementById('prev').classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
-        document.getElementById('prev').classList.add('bg-gray-300', 'text-black');
+        document.getElementById('prev').classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700', 'font-bold');
+        document.getElementById('prev').classList.add('bg-gray-300', 'text-gray-500');
     } else {
         document.getElementById('prev').removeAttribute('disabled');
-        document.getElementById('prev').classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700');
-        document.getElementById('prev').classList.remove('bg-gray-300', 'text-black');
+        document.getElementById('prev').classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700', 'font-bold');
+        document.getElementById('prev').classList.remove('bg-gray-300', 'text-gray-500');
     }
     let count = 0;
     if (resultcheck === true) {
@@ -29,12 +29,12 @@ function setdisable() {
 
     if (currentPage === count) {
         document.getElementById('next').setAttribute('disabled', true);
-        document.getElementById('next').classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700');
-        document.getElementById('next').classList.add('bg-gray-300', 'text-black');
+        document.getElementById('next').classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-700', 'font-bold');
+        document.getElementById('next').classList.add('bg-gray-300', 'text-gray-500');
     } else {
         document.getElementById('next').removeAttribute('disabled');
-        document.getElementById('next').classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700');
-        document.getElementById('next').classList.remove('bg-gray-300', 'text-black');
+        document.getElementById('next').classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700', 'font-bold');
+        document.getElementById('next').classList.remove('bg-gray-300', 'text-gray-500');
     }
 }
 document.getElementById('prev').addEventListener('click', function () {
@@ -52,6 +52,7 @@ document.getElementById('prev').addEventListener('click', function () {
         document.querySelector(`.page[data-page="${currentPage}"]`).classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700');
         document.querySelector(`.page[data-page="${currentPage}"]`).classList.remove('bg-gray-300', 'text-black', 'hover:bg-gray-500');
         setdisable();
+        if (colHighlight != -1) highlightColumn(colHighlight);
     }
 });
 document.getElementById('next').addEventListener('click', function () {
@@ -74,6 +75,8 @@ document.getElementById('next').addEventListener('click', function () {
         document.querySelector(`.page[data-page="${currentPage}"]`).classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700');
         document.querySelector(`.page[data-page="${currentPage}"]`).classList.remove('bg-gray-300', 'text-black', 'hover:bg-gray-500');
         setdisable();
+        if (colHighlight != -1) highlightColumn(colHighlight);
+
     }
 });
 
@@ -94,6 +97,8 @@ pages.addEventListener('click', function (e) {
         e.target.classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-700');
         e.target.classList.remove('bg-gray-300', 'text-black', 'hover:bg-gray-500');
         setdisable();
+        if (colHighlight != -1) highlightColumn(colHighlight);
+
     }
 });
 function pagination(array, itemsPerPage, currentPage) {
@@ -122,7 +127,7 @@ function renderTable(x, currentPage = 1) {
             + '</td><td class="border border-gray-300 px-4 py-2">' + student.department.text
             + '</td><td class="border border-gray-300 px-4 py-2">' + student.gender.text
             + '</td><td class="border border-gray-300 px-4 py-2">' + student.birthdate
-            + '</td><td class="border border-gray-300 px-4 py-2">' + `<button class="editStudent bg-blue-500 hover:bg-blue-700 active:bg-blue-900 text-white font-bold py-2 px-4 rounded" data-mssv="${student.MSSV}">Sửa</button>`
+            + '</td><td class="border border-gray-300 px-4 py-2 text-center">' + `<button class="editStudent bg-blue-500 hover:bg-blue-700 active:bg-blue-900 text-white font-bold py-2 px-4 rounded" data-mssv="${student.MSSV}">Sửa</button>`
             + '</td><td class="border border-gray-300 px-4 py-2">' + `<button class="delStudent  bg-red-500 hover:bg-red-700 active:bg-red-900 text-white font-bold py-2 px-4 rounded" data-mssv="${student.MSSV}">Xóa</button>`
             + '</td></tr>';
     });
@@ -144,9 +149,13 @@ const huyBtn = document.getElementById('huyBtn');
 deleteBtn.addEventListener('click', function () {
     students = students.filter(student => student.MSSV !== deleteModal.dataset.mssv);
     saveData();
+    resultcheck = false;
+    result = [];
+    formFilter.reset();
     renderTable(students); // Cập nhật lại bảng sau khi xóa
     setPages(students, itemsPerPage);
     setdisable();
+    highlightColumn(colHighlight);
     deleteModal.style.display = 'none';
 });
 huyBtn.addEventListener('click', function () {
@@ -215,6 +224,10 @@ formAdd.addEventListener('submit', function (e) {
     }
     //renderTable(students);
     saveData();
+    resultcheck = false;
+    result = [];
+    // reset form lọc
+    formFilter.reset();
     renderTable(students);
     setPages(students, itemsPerPage);
     setdisable();
@@ -225,6 +238,14 @@ formAdd.addEventListener('submit', function (e) {
 });
 const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
+const clearSearch = document.getElementById('clearSearch');
+clearSearch.addEventListener('click', function () {
+    search.value = '';
+    resultcheck = false;
+    renderTable(students);
+    setPages(students, itemsPerPage);
+    setdisable();
+});
 searchBtn.addEventListener('click', function () {
     const searchValue = search.value;
     if (searchValue === '') {
@@ -271,6 +292,7 @@ buttonCloseFilter.addEventListener('click', function () {
 });
 const filStudent = document.getElementById('filStudent');
 filStudent.addEventListener('click', function () {
+    clearSearch.click();
     const locsv = document.getElementById('locsv');
     locsv.style.display = 'flex';
 });
@@ -312,40 +334,131 @@ formFilter.addEventListener('reset', function () {
     locsv.style.display = 'none';
 });
 
-function sortTable(table, col, asc = true) {
-    const tbody = table.tBodies[0];
-    const rows = Array.from(tbody.querySelectorAll("tr"));
+// function sortTable(table, col, asc = true) {
+//     const tbody = table.tBodies[0];
+//     const rows = Array.from(tbody.querySelectorAll("tr"));
 
-    // Sort rows based on the text content of the cell at index 'col'
-    rows.sort((a, b) => {
-        const aText = a.querySelectorAll("td")[col].textContent.trim();
-        const bText = b.querySelectorAll("td")[col].textContent.trim();
+//     // Sort rows based on the text content of the cell at index 'col'
+//     rows.sort((a, b) => {
+//         const aText = a.querySelectorAll("td")[col].textContent.trim();
+//         const bText = b.querySelectorAll("td")[col].textContent.trim();
 
-        // Numeric or alphabetic comparison
+//         // Numeric or alphabetic comparison
+//         return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
+//     });
+
+//     // Append sorted rows to the tbody
+//     rows.forEach(row => tbody.appendChild(row));
+// }
+// const table = document.getElementById('table');
+// // bỏ qua 2 cột cuối cùng
+// table.querySelectorAll('.ths').forEach((header, index) => {
+//     header.addEventListener('click', () => {
+//         table.querySelectorAll('.ths').forEach(otherHeader => {
+//             if (otherHeader !== header) {
+//                 otherHeader.classList.remove('asc');
+//                 const othersvg = otherHeader.querySelector('svg');
+//                 othersvg.style.transform = 'rotate(0deg)';
+//                 // xóa màu hightlight cột
+//             }           
+//         });
+//         const asc = header.classList.contains('asc');
+//         sortTable(table, index, !asc);
+//         header.classList.toggle('asc', !asc);
+//         // hiển thị thẻ svg tăng giảm đã có sẵn trong thẻ th
+//         const svg = header.querySelector('svg');
+//         if (asc) {
+//             svg.style.transform = 'rotate(180deg)';
+//         } else {
+//             svg.style.transform = 'rotate(0deg)';
+//         }
+//     });
+// });
+function sortData(array, col, asc = true) {
+    // Sắp xếp mảng dựa trên cột được chỉ định (col) và hướng (asc)
+    array.sort((a, b) => {
+        const aText = getColumnText(a, col);
+        const bText = getColumnText(b, col);
+
         return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
     });
-
-    // Append sorted rows to the tbody
-    rows.forEach(row => tbody.appendChild(row));
 }
 const table = document.getElementById('table');
-// bỏ qua 2 cột cuối cùng
+function getColumnText(student, col) {
+    switch (col) {
+        case 0: return student.name.trim(); // Cột Tên
+        case 1: return student.MSSV.trim(); // Cột MSSV
+        case 2: return student.email.trim(); // Cột Email
+        case 3: return student.department.text.trim(); // Cột Khoa
+        case 4: return student.gender.text.trim(); // Cột Giới tính
+        case 5: return student.birthdate.trim(); // Cột Ngày sinh
+        default: return '';
+    }
+}
+let colHighlight = -1;
+function highlightColumn(index) {
+    const table = document.getElementById('table');
+    const rows = Array.from(table.querySelectorAll('tr'));
+
+    // Loại bỏ highlight trước đó
+    table.querySelectorAll('th').forEach(th => {
+        th.classList.remove('bg-blue-200');
+    });
+    rows.forEach(row => {
+        row.querySelectorAll('td').forEach(td => {
+            td.classList.remove('bg-blue-100');
+        });
+    });
+
+    // Thêm highlight cho cột hiện tại
+    table.querySelectorAll('th')[index].classList.add('bg-blue-200'); // Đổi màu th
+    rows.forEach(row => {
+        const td = row.querySelectorAll('td')[index];
+        if (td) {
+            td.classList.add('bg-blue-100'); // Đổi màu td
+        }
+    });
+    colHighlight = index;
+}
+
+table.querySelectorAll('.ths').forEach((header, index) => {
+    header.addEventListener('click', () => {
+        // Thực hiện sắp xếp...
+        
+        // Sau khi sắp xếp xong, highlight cột
+        highlightColumn(index);
+    });
+});
+
 table.querySelectorAll('.ths').forEach((header, index) => {
     header.addEventListener('click', () => {
         table.querySelectorAll('.ths').forEach(otherHeader => {
             if (otherHeader !== header) {
                 otherHeader.classList.remove('asc');
                 const othersvg = otherHeader.querySelector('svg');
-                othersvg.style.display = 'none';
+                othersvg.style.transform = 'rotate(0deg)';
             }
-        }
-        );
+        });
         const asc = header.classList.contains('asc');
-        sortTable(table, index, !asc);
+        
+        // Sắp xếp toàn bộ dữ liệu students hoặc result
+        if (resultcheck === true) {
+            sortData(result, index, !asc);
+        } else {
+            sortData(students, index, !asc);
+        }
+
+        // Cập nhật lại bảng với dữ liệu đã sắp xếp
+        renderTable(resultcheck ? result : students, 1);
+        setPages(resultcheck ? result : students, itemsPerPage);
+        currentPage = 1; // Đặt lại trang đầu tiên sau khi sắp xếp
+        setdisable();
+        highlightColumn(index);
+        
         header.classList.toggle('asc', !asc);
-        // hiển thị thẻ svg tăng giảm đã có sẵn trong thẻ th
+
+        // Xử lý hiển thị SVG
         const svg = header.querySelector('svg');
-        svg.style.display = 'block';
         if (asc) {
             svg.style.transform = 'rotate(180deg)';
         } else {
@@ -353,6 +466,9 @@ table.querySelectorAll('.ths').forEach((header, index) => {
         }
     });
 });
+
+
+
 /*
 // Lưu dữ liệu sinh viên vào sessionStorage
 function saveData() {
@@ -390,3 +506,25 @@ function getData() {
 
 window.addEventListener('beforeunload', saveData);
 window.addEventListener('load', getData);
+const modal =document.getElementById('themsv');
+const modal2 =document.getElementById('locsv');
+const modal3 =document.getElementById('deleteModal');
+
+
+modal.addEventListener('click', function (event) {
+    if (event.target === this) { // Kiểm tra xem click có phải trên modal không
+        modal.style.display = 'none';
+    }
+});
+modal2.addEventListener('click', function (event) {
+    if (event.target === this) {
+        modal2.style.display = 'none';
+    }
+});
+
+
+modal3.addEventListener('click', function (event) {
+    if (event.target === this) {
+        modal3.style.display = 'none';
+    }
+});
