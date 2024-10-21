@@ -226,7 +226,7 @@ formAdd.addEventListener('submit', function (e) {
     } else {
         currentEditStudent = obj;
         editModal.style.display = 'flex';
-        editMSSV = false;
+        
     }
     //renderTable(students);
     const form = document.getElementById('themsv');
@@ -279,13 +279,13 @@ const buttonClose = document.getElementById('closeModal');
 buttonClose.addEventListener('click', function () {
     const form = document.getElementById('themsv');
     form.style.display = 'none';
+    editMSSV = false;
     formAdd.reset();
 });
 const buttonCloseFilter = document.getElementById('closefil');
 buttonCloseFilter.addEventListener('click', function () {
     const form = document.getElementById('locsv');
     form.style.display = 'none';
-    formAdd.reset();
 });
 const filStudent = document.getElementById('filStudent');
 filStudent.addEventListener('click', function () {
@@ -519,6 +519,8 @@ const modal4 = document.getElementById('editModal');
 
 modal.addEventListener('click', function (event) {
     if (event.target === this) { // Kiểm tra xem click có phải trên modal không
+        editMSSV = false;
+        formAdd.reset();
         modal.style.display = 'none';
     }
 });
@@ -534,6 +536,8 @@ modal3.addEventListener('click', function (event) {
 });
 modal4.addEventListener('click', function (event) {
     if (event.target === this) {
+        editMSSV = false;
+        formAdd.reset();
         modal4.style.display = 'none';
     }
 });
@@ -544,10 +548,14 @@ const closeModalEdit = document.querySelector('.closeModalUpdate');
 const huyBtnEdit = document.getElementById('huyBtnEdit');
 
 huyBtnEdit.addEventListener('click', function () {
+    editMSSV = false;
+    formAdd.reset();
     editModal.style.display = 'none';
 }
 );
 closeModalEdit.addEventListener('click', function () {
+    editMSSV = false;
+    formAdd.reset();
     editModal.style.display = 'none';
 });
 editBtn.addEventListener('click', function () {
@@ -556,6 +564,7 @@ editBtn.addEventListener('click', function () {
         // Tìm và cập nhật đối tượng trong mảng students
         let index = students.findIndex(student => student.MSSV === currentEditStudent.MSSV);
         students[index] = currentEditStudent;
+        editMSSV = false;
         console.log('Data updatedsdsdsdsdsdd');
     }
     saveData();
