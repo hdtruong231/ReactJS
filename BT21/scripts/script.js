@@ -140,6 +140,7 @@ buttonAdd.addEventListener('click', function () {
     text.textContent = 'Thêm Sinh Viên'; // Đổi tiêu đề thành "Thêm Sinh Viên"
     // Cho phép nhập MSSV
     document.getElementById('MSSV').removeAttribute('readonly');
+    document.getElementById('MSSV').style.backgroundColor = 'white';
 });
 const deleteModal = document.getElementById('deleteModal');
 const deleteBtn = document.getElementById('deleteBtn');
@@ -181,6 +182,7 @@ document.addEventListener('click', function (e) {
             document.getElementById('name').value = student.name;
             document.getElementById('MSSV').value = student.MSSV;
             document.getElementById('MSSV').setAttribute('readonly', true);
+            document.getElementById('MSSV').style.backgroundColor = '#C0C0C0';
             document.getElementById('email').value = student.email;
             document.getElementById('department').value = student.department.value;
             document.getElementById('gender').value = student.gender.value;
