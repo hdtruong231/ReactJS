@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout and SetInterval</title>
+  <script type="module" crossorigin src="/assets/index-DFDDrSSV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6JrS7MP.css">
+</head>
+
+<body class="bg-blue-500 flex items-center justify-center min-h-screen">
+    <div class="container flex gap-20 items-center justify-center">
+        <div class="timeout p-8 bg-white rounded-lg flex flex-col gap-7 w-64 h-72 justify-between">
+            <h1 class="text-2xl font-bold text-center text-gray-800">SetTimeout</h1>
+            <input type="number" name="second" id="s" placeholder="Enter the second">
+            <div class="flex justify-between">
+                <button id="btnTimeout" class="bg-blue-500 text-white px-4 py-2 rounded">Start</button>
+                <button id="btnClearTimeout" class="bg-red-500 text-white px-4 py-2 rounded">Clear</button>
+            </div>
+            <div class="w-44 h-7">
+                <p id="textTimeout" class="text-xl text-center text-gray-800"></p>
+            </div>
+        </div>
+        <div class="interval p-8 bg-white rounded-lg flex flex-col gap-10 h-72 items-center justify-center">
+            <h1 class="text-2xl font-bold text-center text-gray-800">SetInterval</h1>
+            <div class="w-96 h-7">
+                <p id="textInterval" class="text-xl text-center text-gray-800">Lorem ipsum dolor sit amet.</p>
+            </div>
+            
+            <div class="flex justify-end gap-10">
+                <button id="btnInterval" class="bg-blue-500 text-white px-4 py-2 rounded">Start</button>
+
+                <button id="btnClearInterval" class="bg-red-500 text-white px-4 py-2 rounded">Clear</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
