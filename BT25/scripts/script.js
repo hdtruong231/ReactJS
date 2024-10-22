@@ -1,6 +1,6 @@
 
 try {
-    fetch('./public/funcfact.json')
+    fetch('./funcfact.json')
     .then(response => response.json()) 
     .then(data => {
         console.log(data); // Kiểm tra dữ liệu nhận được từ file JSON
