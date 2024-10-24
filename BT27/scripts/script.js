@@ -13,7 +13,7 @@ btn.addEventListener('click', () => {
             } else {
                 reject('Number: ' + random + ' Failure at step 1');
             }
-        }, 200);
+        }, 2000);
     })
     .then((message) => {
         console.log(message);
@@ -26,7 +26,7 @@ btn.addEventListener('click', () => {
                 } else {
                     reject('Number: ' + random + ' Failure at step 2');
                 }
-            }, 200);
+            }, 2000);
         });
     })
     .then((message) => {
@@ -40,7 +40,7 @@ btn.addEventListener('click', () => {
                 } else {
                     reject('Number: ' + random + ' Failure at step 3');
                 }
-            }, 200);
+            }, 2000);
         });
     })
     .then((message) => {
